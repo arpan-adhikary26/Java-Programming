@@ -68,7 +68,7 @@ public class Insertion {
             arr[i+1] = arr[i];
         }
 
-        arr[0] = element;
+        arr[pos] = element;
         size++;
 
         System.out.println("Array after insertion at beginning:");
@@ -101,7 +101,7 @@ public class Insertion {
 
         // size = InsertionAtEnd(arr, element, size);
 
-           size = InsertionAtBeginning(arr, element, size, pos);
+        // size = InsertionAtBeginning(arr, element, size, pos);
 
         sc.close();
     }
