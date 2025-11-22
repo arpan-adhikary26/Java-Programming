@@ -53,6 +53,33 @@ public class Insertion {
         return size;
     }
 
+    //Insertion at beginning
+
+    public static int InsertionAtBeginning(int [] arr, int element, int size, int pos){
+        if(size==arr.length){
+            System.out.println("Insertion not possible, insufficient space");
+            return size;
+        }
+        if(pos<0 || pos>size){
+            System.out.println("Invalid Position");
+            return size;
+        }
+        for(int i=size-1; i>=pos; i--){
+            arr[i+1] = arr[i];
+        }
+
+        arr[0] = element;
+        size++;
+
+        System.out.println("Array after insertion at beginning:");
+        for(int i = 0; i < size; i++){
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
+        return size;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -73,6 +100,8 @@ public class Insertion {
         // size = InsertionAtPosition(arr, element, size, pos);
 
         // size = InsertionAtEnd(arr, element, size);
+
+           size = InsertionAtBeginning(arr, element, size, pos);
 
         sc.close();
     }
